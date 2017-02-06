@@ -148,7 +148,7 @@ describe('karmaSystemjsAdapter()', function() {
       karma.config.systemjs.config = '{"key": "value"}';
       adapter.run(karma, System, Promise);
       karma.loaded();
-      expect(System.config).toHaveBeenCalledWith({key: 'value', baseURL: '/base/'});
+      expect(System.config).toHaveBeenCalledWith({key: 'value', baseURL: '/base/', bundles: []});
     });
 
     it('Only calls System.config() to set baseURL, if no config set', function() {
